@@ -7,10 +7,15 @@ let lastName = 'Bergstrom';
 console.log('lastName:', lastName);
 // 3 - Create a third variable called `fullName`, assign it the value of your first and last name
 // (remember, you already have variables for this, can you use those?)
-let fullName = (firstName + ' ' + lastName);
+let fullName = (firstName + lastName);
+let fullNameSpaced = (firstName + ' ' + lastName);
+
+// Note: I'm also creating a variable 'fullNameSpaced' that will include a space.
 
 // 4 - Console log the value of `fullName`
+console.log(fullName);
 console.log('fullName:', fullName);
+console.log('fullNameSpaced:', fullNameSpaced);
 // 5 - Create a variable called `luckyNumber` and assign it the value of your lucky number.
 let luckyNumber = 21;
 console.log('luckyNumber:', luckyNumber);
@@ -18,6 +23,7 @@ console.log('luckyNumber:', luckyNumber);
 // 'My name is (full name), and I think (lucky number) is a winner!'.
 // Refer back to the videos if you need help with this one.
 console.log('My name is', fullName, 'and I think', luckyNumber, 'is a winner!');
+console.log('My name is', fullNameSpaced, 'and I think', luckyNumber, 'is a winner!');
 // 7 - Create a variable named `adventurous` and set it to a boolean value (true or false)
 let adventurous = true;
 console.log(adventurous);
@@ -34,7 +40,7 @@ console.log('friendsPets:', friendsPets)
 pets += 2;
 console.log('add 2 to pets:', pets);
 // 12 - Create a constant variable called `allowedPets` and set it to a number value of your choice
-let allowedPets = 5;
+const allowedPets = 5;
 console.log('allowedPets:', allowedPets);
 // 13 - Create a conditional: if adventurous is true, console log "Adventures are great!", 
 // if it's not true, console log "How about we stay home?"
@@ -46,19 +52,23 @@ if ( adventurous ) {
 // 14 - Create a compound conditional: if luckyNumber is 2 and adventurous is true,
 // console log "Roll the dice!"
 luckyNumber = 2;
+console.log('luckyNumber:', luckyNumber);
+// Note: setting 'luckyNumber' to 2 to test.
 if ( adventurous && luckyNumber == 2) {
     console.log('Roll the dice!');
-} else {
-    console.log( 'How about we stay home?');
-}
+} 
 // 15 - Write a conditional that console logs "I can have more pets!" 
 //if the value of `pets` is less than the value of `allowedPets`,
 // console logs "I have enough pets" if the value of `pets` is equal to the value of `allowedPets`,
 // and console logs "Oh no, I have too many pets!"
 // if the value of `pets` is greater than the value of `allowedPets`.
+
+// Note: I'm changing the value of pets for testing.
+pets = 5;
+
 if ( pets < allowedPets ) {
     console.log('I can have more pets!');
-} else if ( pets == allowedPets ) {
+} else if ( pets === allowedPets ) {
     console.log( 'I have enough pets' );
 } else {
     console.log( 'Oh no, I have too many pets!' );
@@ -71,9 +81,9 @@ if ( pets < allowedPets ) {
 // be sure to think through all the scenarios. 
 // console.log `mostPets` after the conditional has run.
 
-//friendsPets = 7;
+friendsPets = 7;
 
-//testing different values.
+// Note: testing different values.
 
 let mostPets = 0;
 if (pets >= friendsPets) {
@@ -90,14 +100,15 @@ console.log('mostPets:', mostPets);
 //      Otherwise, log "Luck is what happens when preparation meets opportunity"
 //      You'll need to research how to use switch statements!
 
-// I used these to test the switch statement.
-luckyNumber = 1;
-luckyNumber = 2;
-luckyNumber = 3;
-
+// Note: I used these to test the switch statement.
+//luckyNumber = 1;
+//luckyNumber = 2;
+//luckyNumber = 3;
+luckyNumber = 7;
 console.log(luckyNumber);
 
-function luckSwitch(luckyNumber) {
+// Update: I had previously written this switch using a function. 
+// I am updating it to not use a function.
 
 switch(luckyNumber) {
     case 1:
@@ -113,8 +124,7 @@ switch(luckyNumber) {
         console.log('Luck is what happens when preparation meets opportunity');
         break;
     }
-}
-luckSwitch(luckyNumber);
+
 // 18 -- Rewrite question 13 with a `ternary` operator. You'll need to do research!
 
 adventurous ? console.log('Adventures are great!') : console.log('How about we stay home?');
